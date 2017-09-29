@@ -2,9 +2,13 @@ body {
 	background-color: #ebedee;
 }
 
+h1, h2 {
+	text-align: center;
+}
+
 div {
 	background-color: white;
-	margin: 10px;
+	margin: 20px;
 
 }
 
@@ -13,7 +17,7 @@ div {
 }
 
 .ecriture {
-	display: block;
+	display: inline-block;
 }
 
 span {
@@ -30,7 +34,35 @@ p {
 }
 
 button {
-	margin-left: 50px !important ;
-	margin-top: -100px !important ;
+	margin-left: 200px !important ;
+	margin-top: -95px !important ;
 }
 
+
+/*PARTIE CSS DAVID*/
+  .student{
+    height: 100px;
+    border: 1px solid grey;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  img{
+    height: 90px;
+    border-radius: 45px;
+    flex-shrink: 1;
+  }
+  .info{
+    flex-grow: 2;
+    margin-left: 10px;
+  }
+  .name{
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  .arrival{
+    display: flex;
+    justify-content: space-between;
