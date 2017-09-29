@@ -26,14 +26,16 @@ span {
 
 .enBalise {
 	font-size: 24px;
+	display: inline-block;
+	margin:0;
 }
 
-p {
+.texte {
 	margin:0;
 	display: inline-block;
 }
 
-button {
+.boutton {
 	margin-left: 200px !important ;
 	margin-top: -95px !important ;
 }
