@@ -1,28 +1,23 @@
-let studentsList = [
+let studentsList = [ // mock data, récup liste de la DB
 {
   "id": 1,
-  "fullName": "John Mich",
-  "arrivalTime": "notSet"
+  "fullName": "John Mich"
 },
 {
   "id": 2,
-  "fullName": "John MichMich",
-  "arrivalTime": "notSet"
+  "fullName": "John MichMich"
 },
 {
   "id": 3,
-  "fullName": "John MichMichMich",
-  "arrivalTime": "notSet"
+  "fullName": "John MichMichMich"
 },
 {
   "id": 4,
-  "fullName": "JohnJohn Mich",
-  "arrivalTime": "notSet"
+  "fullName": "JohnJohn Mich"
 },
 {
   "id": 5,
-  "fullName": "JohnJohn MichMich",
-  "arrivalTime": "notSet"
+  "fullName": "JohnJohn MichMich"
 }
 ];
 
@@ -51,13 +46,13 @@ $(document).ready(function(){
     }
 
     moment.locale('fr');  // set up de la librairie locale en français
-    let supposedTimeofArrival = '09:30'; // Heure d'arrivée pour le "On Tine"
+    let supposedTimeofArrival = '09:30'; // Heure d'arrivée pour le "On Tine" à récup selon promo
 
-    // Deploiement des bouttons en retard
+    // Deploiement des options lors du click sur le bouton en "arrived late"
     $(".student").on('click', '#late', function(){
       // récup de l'id du current student
       let currentStudent = $(this).closest('.student').attr('id');
-      // Affichage heure enregistrée
+      // options "arrived now" ou "arrived at"
       $("#"+currentStudent+" .arrival").html(`
             <button type="button" class="btn btn-warning" id="arrivedNow">Arrived now</button>
             <button type="button" class="btn btn-warning" id="arrivedAt">Arrived at...</button>
@@ -69,8 +64,8 @@ $(document).ready(function(){
     $(".student").on('click', '#onTime', function(){
       // récup de l'id du current student
       let currentStudent = $(this).closest('.student').attr('id');
-      // ajout de l'heure d'arrivée dans la studentList
-        // let arrivalTime = moment(supposedTimeofArrival.format('LT');
+      // ajout de l'heure d'arrivée dans la DB
+      //  -->CRUD
       // Affichage heure enregistrée
       $("#"+currentStudent+" .arrival").html(`
         <p>arrived at <span>${supposedTimeofArrival}</span></p>
@@ -82,10 +77,12 @@ $(document).ready(function(){
       console.log('premier clic');
       // récup de l'id du current student
       let currentStudent = $(this).closest('.student').attr('id');
-      // ajout de l'heure d'arrivée dans la studentList
+      // recup de l'heure actuelle
         date = new Date();
         current_hour = date.getTime();
         arrivalTime = moment(current_hour).format('LT');
+      // ajout de l'heure d'arrivée dans la DB
+      //  -->CRUD
       // Affichage heure enregistrée
       $("#"+currentStudent+" .arrival").html(`
         <p>arrived at <span>${arrivalTime}</span></p>
@@ -119,6 +116,8 @@ $(document).ready(function(){
           let currentStudent = $(this).closest('.student').attr('id');
           // récupration de l'heure entrée
           let timeOfArrival = $('#datetimepicker3 input').val();
+           // ajout de l'heure d'arrivée dans la DB
+           //  -->CRUD
           $("#"+currentStudent+" .arrival").html(`
             <p>arrived at <span>${timeOfArrival}</span></p>
             <button class="btn btn-primary" id="edit">Edit</button>
