@@ -57,7 +57,7 @@ $(document).ready(function(){
         $('#liste').append(studentElt);
     }
 
-    moment.locale('fr');
+    moment.locale('fr');  // set up de la librairie locale en français
     let supposedTimeofArrival = '09:30'; // Heure d'arrivée pour le "On Tine"
 
     // Arrivée à temps
@@ -109,8 +109,9 @@ $(document).ready(function(){
        // et d'un bouton pour valider l'entrée
        $(".arrival").on('click', '#enterTime', function(){
           let currentStudent = $(this).closest('.student').attr('id');
-          $("#"+currentStudent+" .arrival").html(`          <p>arrived at <span>09.30Hrs</span></p>
-          <button class="btn btn-primary" id="edit">Edit</button>
+          $("#"+currentStudent+" .arrival").html(`
+            <p>arrived at <span>09.30</span></p>
+            <button class="btn btn-primary" id="edit">Edit</button>
           `);
       });
      });
