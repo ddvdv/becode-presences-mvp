@@ -29,7 +29,7 @@ $(document).ready(function(){
       var studentElt = document.createElement('div');
       studentElt.innerHTML = `
         <div class="student" id="student-${student.id}">
-          <img src="avatar.png" alt="" class="img-fluid">
+          <img src="img/avatar.png" alt="" class="img-fluid">
           <div class="info">
           <div class="name">
             ${student.fullName}
