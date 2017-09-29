@@ -39,9 +39,10 @@ $(document).ready(function(){
           <div class="name">
             ${student.fullName}
           </div>
-            <div class="arrival">
-              <button class="btn btn-warning" id="late">late</button>
-              <button class="btn btn-success" id="onTime">on time</button>
+      
+           <div class="arrival">
+            <button type="button" class="btn btn-warning" id="late">Arrived late</button>
+            <button class="btn btn-success" id="onTime">On Time</button>
             </div>
           </div>
         </div>
@@ -52,16 +53,17 @@ $(document).ready(function(){
     moment.locale('fr');  // set up de la librairie locale en français
     let supposedTimeofArrival = '09:30'; // Heure d'arrivée pour le "On Tine"
 
-    // Déploiement des boutons "retard"
+    // Deploiement des bouttons en retard
     $(".student").on('click', '#late', function(){
+      // récup de l'id du current student
       let currentStudent = $(this).closest('.student').attr('id');
+      // Affichage heure enregistrée
       $("#"+currentStudent+" .arrival").html(`
-        <button class="btn btn-warning" id="arrivedNow">Arrived now</button>
-        <button class="btn btn-warning" id="arrivedAt">Arrived at...</button>
-        <button class="btn btn-primary" id="edit">back</button>
+            <button type="button" class="btn btn-warning" id="arrivedNow">Arrived now</button>
+            <button type="button" class="btn btn-warning" id="arrivedAt">Arrived at...</button>
+            <button class="btn btn-primary" id="edit">back</button>
         `);
     });
-
 
     // Arrivée à temps
     $(".student").on('click', '#onTime', function(){
@@ -93,39 +95,38 @@ $(document).ready(function(){
     // Sous-button arrivée en retard, dirige vers snippet time
     $(".student").on('click', '#arrivedAt', function(){
       let currentStudent = $(this).closest('.student').attr('id');
-      $("#"+currentStudent+" .arrival").html(`
-        <div class='col-xs-12'>
+      $("#"+currentStudent+" .arrival").html(`        <div class='col-xs-8'>
         <div class="form-group">
-        <div class='input-group date' id='datetimepicker'>
-        <input type='text' class="form-control" id="timeOfArrival" />
-        <span class="input-group-addon">
-        <span class="glyphicon glyphicon-time"></span>
-        </span>
+          <div class='input-group date' id='datetimepicker3'>
+            <input type='text' class="form-control" />
+            <span class="input-group-addon">
+            <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
         </div>
-        </div>
-        </div>
+       </div>
         <button class="btn btn-primary" id="enterTime">Enter</button>
         `);
-        //  ajout du js snippet time
-        $('#datetimepicker').datetimepicker({
-          format: 'LT'
+        // et ajout du js snippet time
+        $('#datetimepicker3').datetimepicker({
+          format: 'LT',
+          format: 'HH:mm'
         });
-        //  simulation du click sur le snippet
-        $( "#datetimepicker .glyphicon" ).trigger( "click" );
-       //  ajour d'un bouton pour valider l'entrée
-        $(".arrival").on('click', '#enterTime', function(){
+        // simulation click sur le snippet
+        $('#datetimepicker3 span.input-group-addon').trigger('click');
+       // et d'un bouton pour valider l'entrée
+       $(".arrival").on('click', '#enterTime', function(){
           let currentStudent = $(this).closest('.student').attr('id');
-          let timeOfArrival = $('#timeOfArrival').val();
-          console.log(timeOfArrival);
-
+          // récupration de l'heure entrée
+          let timeOfArrival = $('#datetimepicker3 input').val();
           $("#"+currentStudent+" .arrival").html(`
             <p>arrived at <span>${timeOfArrival}</span></p>
             <button class="btn btn-primary" id="edit">Edit</button>
           `);
-        });
+      });
      });
-    $(".student").on('click', 'datetimepicker', function(){
-      $('#datetimepicker').datetimepicker({
+    $(".student").on('click', 'datetimepicker3', function(){
+      $('#datetimepicker3').datetimepicker({
         format: 'LT'
       });
     });
@@ -133,8 +134,8 @@ $(document).ready(function(){
     $(".student").on('click', '#edit', function(){
       let currentStudent = $(this).closest('.student').attr('id');
       $("#"+currentStudent+" .arrival").html(`
-         <button class="btn btn-warning" id="late">late</button>
-         <button class="btn btn-success" id="onTime">on time</button>
+            <button type="button" class="btn btn-warning" id="late">Arrived late</button>
+            <button class="btn btn-success" id="onTime">On Time</button>
         `);
     });
   });
