@@ -44,18 +44,6 @@ $(document).ready(function(){
     moment.locale('fr');  // set up de la librairie locale en français
     let supposedTimeofArrival = '09:30'; // Heure d'arrivée pour le "On Tine" à récup selon promo
 
-    // Deploiement des options lors du click sur le bouton en "arrived late"
-    $(".student").on('click', '#late', function(){
-      // récup de l'id du current student
-      let currentStudent = $(this).closest('.student').attr('id');
-      // options "arrived now" ou "arrived at"
-      $("#"+currentStudent+" .arrival").html(`
-            <button type="button" class="btn btn-warning" id="arrivedNow">Arrived now</button>
-            <button type="button" class="btn btn-warning" id="arrivedAt">Arrived at...</button>
-            <button class="btn btn-primary" id="edit">back</button>
-        `);
-    });
-
     // Arrivée à temps
     $(".student").on('click', '#onTime', function(){
       // récup de l'id du current student
@@ -67,7 +55,22 @@ $(document).ready(function(){
         <p>arrived at <span>${supposedTimeofArrival}</span></p>
         <button class="btn btn-primary" id="edit">Edit</button>
         `);
+      // change background de l'apprenant ponctuel
+      // $(this).closest('.student').addClass("wasOnTime");
     });
+
+    // Deploiement des options lors du click sur le bouton en "arrived late"
+    $(".student").on('click', '#late', function(){
+      // récup de l'id du current student
+      let currentStudent = $(this).closest('.student').attr('id');
+      // options "arrived now" ou "arrived at"
+      $("#"+currentStudent+" .arrival").html(`
+            <button type="button" class="btn btn-xs btn-warning" id="arrivedNow">Arrived now</button>
+            <button type="button" class="btn btn-xs btn-warning" id="arrivedAt">Arrived at...</button>
+            <button class="btn btn-primary" id="edit">back</button>
+        `);
+    });
+   
     // Sous-button arrivée en retard, maintenant
     $(".student").on('click', '#arrivedNow', function(){
       console.log('premier clic');
