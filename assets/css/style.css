@@ -6,11 +6,11 @@ h1, h2 {
 	text-align: center;
 }
 
-div {
+/*div {
 	background-color: white;
 	margin: 20px;
 
-}
+}*/
 
 .option_menu {
 
@@ -20,9 +20,9 @@ div {
 	display: inline-block;
 }
 
-span {
+/*span {
 	color: #9dceda;
-}
+}*/
 
 .enBalise {
 	font-size: 24px;
