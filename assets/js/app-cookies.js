@@ -1,3 +1,10 @@
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
@@ -13,18 +20,3 @@ function getCookie(cname) {
     }
     return "";
 }
-
-currentUserName = getCookie('userName');
-
-$(document).ready(function(){
-    $('#userName').html('Hello <p> <span class="name">' + currentUserName + '</span></p>');
-});
-
-
-
-currentPromName = getCookie('promName');
-
-$(document).ready(function(){
-    $('#promName').html('selected prom: <p> <span class="name"> ' + currentPromName + '</span></p>');
-});
-
