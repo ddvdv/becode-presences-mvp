@@ -14,10 +14,6 @@ let studentsList = [ // mock data, récup liste de la DB
 {
   "id": 4,
   "fullName": "JohnJohn Mich"
-},
-{
-  "id": 5,
-  "fullName": "JohnJohn MichMich"
 }
 ];
 
