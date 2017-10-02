@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "Fafont";
+    src: url('font-awesome.min.css');
+}
+
+
+@fa-font-path: "../css/font-awesome.min.css";
+
+*{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+	background-color: #ebedee;
+}
+
+h1, h2, h3 {
+	text-align: center;
+}
+a:active{
+  text-decoration: none;
+}
+
+h1{
+  color: #15232e;
+}
+#code{
+  color: #61c2d0;
+}
+
+.ecriture {
+	display: inline-block;
+}
+
+.enBalise {
+	font-size: 24px;
+	display: inline-block;
+	margin:0;
+}
+
+.texte {
+	margin:0;
+	display: inline-block;
+}
+
+.boutton {
+	margin-left: 200px !important ;
+	margin-top: -95px !important ;
+}
+.caret-down{
+  display: block;
+  margin: auto;
+  text-align: center;
+  color: #15232e;
+}
+
+/*PARTIE CSS DAVID*/
+  .student, .prom, .user, .choixMenu{
+    border: 1px dotted #15232e;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 3px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .choixMenu{
+    margin-top: 10px;
+  }
+  img{
+    height: 90px;
+    border-radius: 45px;
+    flex-shrink: 1;
+  }
+   .logo{
+    width: 90px;
+    height: 90px;
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .info{
+    flex-grow: 2;
+    margin-left: 10px;
+  }
+  .sousChoixMenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 2;
+    margin-left: 10px;
+  }
+  .name{
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  .location{
+    font-size: 0.8em;
+    font-style: italic;
+  }
+  .arrival, .change{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  .arrival p {
+    vertical-align: bottom;
+  }
+  .choixMenu .glyphicon{
+    font-size: 2.5em;
+    color: #15232e;
+  }
+.wasOnTime{
+  background-color: green;
+}
