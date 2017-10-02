@@ -72,9 +72,9 @@ $(document).ready(function(){
       // Affichage heure enregistrée
       $("#"+currentStudent+" .arrival").html(`
         <p>arrived at <span>${supposedTimeofArrival}</span></p>
-        <button class="btn" id="edit">
+        <button class="btn" id="reset">
           <i class="fa fa-pencil" aria-hidden="true"> </i>
-        edit</button>
+        reset</button>
         `);
       // change background de l'apprenant ponctuel
       // $(this).closest('.student').addClass("wasOnTime");
@@ -92,7 +92,7 @@ $(document).ready(function(){
             <button type="button" class="btn btn-warning" id="arrivedAt">
               <i class="fa fa-hourglass-half" aria-hidden="true"></i>
               at...</button>
-            <button type="button" class="btn btn-xs" id="edit">
+            <button type="button" class="btn btn-xs" id="reset">
               <i class="fa fa-reply" aria-hidden="true"></i>
             </button>
         `);
@@ -112,9 +112,9 @@ $(document).ready(function(){
       // Affichage heure enregistrée
       $("#"+currentStudent+" .arrival").html(`
         <p>arrived at <span>${arrivalTime}</span></p>
-        <button class="btn" id="edit">
+        <button class="btn" id="reset">
           <i class="fa fa-pencil" aria-hidden="true"> </i>
-        edit</button>
+        reset</button>
         `);
     });
 
@@ -141,9 +141,9 @@ $(document).ready(function(){
            //  -->CRUD
           $("#"+currentStudent+" .arrival").html(`
             <p>arrived at <span>${timeOfArrival}</span></p>
-            <button class="btn" id="edit">
+            <button class="btn" id="reset">
               <i class="fa fa-pencil" aria-hidden="true"> </i>
-            edit</button>
+            reset</button>
             `);
       });
        // Simuler le click sur le bouton "enter" lors d'un blur du timeEdited
@@ -157,7 +157,7 @@ $(document).ready(function(){
       });
     });
     // Boutton Edit pour rebasculer au statut initial
-    $(".student").on('click', '#edit', function(){
+    $(".student").on('click', '#reset', function(){
       let currentStudent = $(this).closest('.student').attr('id');
       $("#"+currentStudent+" .arrival").html(`
             <button type="button" class="btn btn-warning" id="late">
