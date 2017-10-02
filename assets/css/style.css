@@ -17,7 +17,7 @@ body {
 h1, h2, h3 {
 	text-align: center;
 }
-a:active{
+a:active, a:hover{
   text-decoration: none;
 }
 
@@ -107,11 +107,16 @@ h1{
   }
   .arrival p {
     vertical-align: bottom;
+    margin-top: 5px;
   }
   .choixMenu .glyphicon{
     font-size: 2.5em;
     color: #15232e;
   }
-.wasOnTime{
-  background-color: green;
-}
+  .timepicker{
+    display: flex;
+    flex-direction: column;
+  }
+  #enterTime{
+    align-self: flex-end; 
+  }

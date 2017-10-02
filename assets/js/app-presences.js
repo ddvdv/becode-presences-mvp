@@ -14,7 +14,23 @@ let studentsList = [ // mock data, récup liste de la DB
 {
   "id": 4,
   "fullName": "JohnJohn Mich"
-}
+},
+{
+  "id": 5,
+  "fullName": "JohnJohn MichMich"
+},
+{
+  "id": 6,
+  "fullName": "Mich John"
+},
+{
+  "id": 7,
+  "fullName": "Mich JohnJohn"
+},
+{
+  "id": 8,
+  "fullName": "John MichMichMich"
+},
 ];
 
 console.log(studentsList);
@@ -104,22 +120,26 @@ $(document).ready(function(){
     // Sous-button arrivée en retard, dirige vers snippet time
     $(".student").on('click', '#arrivedAt', function(){
       let currentStudent = $(this).closest('.student').attr('id');
-      $("#"+currentStudent+" .arrival").html(`        <div class='col-xs-8'>
-        <div class="form-group">
-          <div class='input-group date' id='datetimepicker3'>
-            <input type='text' class="form-control" />
-            <span class="input-group-addon">
-            <span class="glyphicon glyphicon-time"></span>
-            </span>
+      $("#"+currentStudent+" .arrival").html(`
+      <div class="timepicker"
+        <div class='col-xs-12'>
+          <div class="form-group">
+            <div class='input-group date' id='datetimepicker3'>
+              <input type='text' class="form-control" />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-time"></span>
+              </span>
+            </div>
           </div>
-        </div>
-       </div>
-        <button class="btn btn-primary" id="enterTime">Enter</button>
+       <button class="btn btn-primary pull-right" id="enterTime">Enter</button>
+      </div>
         `);
         // et ajout du js snippet time
         $('#datetimepicker3').datetimepicker({
           format: 'LT',
-          format: 'HH:mm'
+          format: 'HH:mm',
+          widgetPositioning: {vertical: 'top'},
+          focusOnShow: false
         });
         // simulation click sur le snippet
         $('#datetimepicker3 span.input-group-addon').trigger('click');
