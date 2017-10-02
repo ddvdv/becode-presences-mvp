@@ -118,35 +118,19 @@ $(document).ready(function(){
         `);
     });
 
- // <div class="form-group">
- //            <div class='input-group date' id='datetimepicker3'>
- //              <input type='text' class="form-control" />
- //              <span class="input-group-addon">
- //                <span class="glyphicon glyphicon-time"></span>
- //              </span>
- //            </div>
-
-
     // Sous-button arrivée en retard, dirige vers snippet time
     $(".student").on('click', '#arrivedAt', function(){
       let currentStudent = $(this).closest('.student').attr('id');
       $("#"+currentStudent+" .arrival").html(`
       <div class="timepicker"
-        <div class='col-xs-12'>
-          <input type="time"/>
+        <div class='col-xs-12'> arrived at: 
+          <input id="timeEdit" type="time"/>
         </div>
        <button class="btn btn-primary pull-right" id="enterTime">Enter</button>
       </div>
         `);
-        // et ajout du js snippet time
-        $('#datetimepicker3').datetimepicker({
-          format: 'LT',
-          format: 'HH:mm',
-          widgetPositioning: {vertical: 'top'},
-          focusOnShow: false
-        });
         // simulation click sur le snippet
-        $('#datetimepicker3 span.input-group-addon').trigger('click');
+        $('#timeEdit').trigger('focus');
        // et d'un bouton pour valider l'entrée
        $(".arrival").on('click', '#enterTime', function(){
           let currentStudent = $(this).closest('.student').attr('id');
