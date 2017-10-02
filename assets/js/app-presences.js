@@ -134,6 +134,8 @@ $(document).ready(function(){
           let timeOfArrival = $('#datetimepicker3 input').val();
            // ajout de l'heure d'arrivée dans la DB
            //  -->CRUD
+           // zoom out suite au zoom in du picker
+           document.body.style.zoom=1.0;
           $("#"+currentStudent+" .arrival").html(`
             <p>arrived at <span>${timeOfArrival}</span></p>
             <button class="btn" id="edit">
