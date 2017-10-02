@@ -27,13 +27,16 @@ $(document).ready(function(){
         <div class="student" id="student-${student.id}">
           <img src="img/avatar.png" alt="" class="img-fluid">
           <div class="info">
-          <div class="name">
-            ${student.fullName}
-          </div>
-      
+            <div class="name">
+              ${student.fullName}
+            </div>
            <div class="arrival">
-            <button type="button" class="btn btn-warning" id="late">Arrived late</button>
-            <button class="btn btn-success" id="onTime">On Time</button>
+            <button type="button" class="btn btn-warning" id="late">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              late</button>
+            <button class="btn btn-success" id="onTime">
+              <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+              On Time</button>
             </div>
           </div>
         </div>
@@ -53,7 +56,9 @@ $(document).ready(function(){
       // Affichage heure enregistrée
       $("#"+currentStudent+" .arrival").html(`
         <p>arrived at <span>${supposedTimeofArrival}</span></p>
-        <button class="btn btn-primary" id="edit">Edit</button>
+        <button class="btn" id="edit">
+          <i class="fa fa-pencil" aria-hidden="true"> </i>
+        edit</button>
         `);
       // change background de l'apprenant ponctuel
       // $(this).closest('.student').addClass("wasOnTime");
@@ -65,9 +70,15 @@ $(document).ready(function(){
       let currentStudent = $(this).closest('.student').attr('id');
       // options "arrived now" ou "arrived at"
       $("#"+currentStudent+" .arrival").html(`
-            <button type="button" class="btn btn-xs btn-warning" id="arrivedNow">Arrived now</button>
-            <button type="button" class="btn btn-xs btn-warning" id="arrivedAt">Arrived at...</button>
-            <button class="btn btn-primary" id="edit">back</button>
+            <button type="button" class="btn btn-warning" id="arrivedNow">
+              <i class="fa fa-check-square-o" aria-hidden="true"></i>
+              now</button>
+            <button type="button" class="btn btn-warning" id="arrivedAt">
+              <i class="fa fa-hourglass-half" aria-hidden="true"></i>
+              at...</button>
+            <button type="button" class="btn btn-xs" id="edit">
+              <i class="fa fa-reply" aria-hidden="true"></i>
+            </button>
         `);
     });
    
@@ -85,7 +96,9 @@ $(document).ready(function(){
       // Affichage heure enregistrée
       $("#"+currentStudent+" .arrival").html(`
         <p>arrived at <span>${arrivalTime}</span></p>
-        <button class="btn btn-primary" id="edit">Edit</button>
+        <button class="btn" id="edit">
+          <i class="fa fa-pencil" aria-hidden="true"> </i>
+        edit</button>
         `);
     });
     // Sous-button arrivée en retard, dirige vers snippet time
@@ -119,8 +132,10 @@ $(document).ready(function(){
            //  -->CRUD
           $("#"+currentStudent+" .arrival").html(`
             <p>arrived at <span>${timeOfArrival}</span></p>
-            <button class="btn btn-primary" id="edit">Edit</button>
-          `);
+            <button class="btn" id="edit">
+              <i class="fa fa-pencil" aria-hidden="true"> </i>
+            edit</button>
+            `);
       });
      });
     $(".student").on('click', 'datetimepicker3', function(){
@@ -132,8 +147,12 @@ $(document).ready(function(){
     $(".student").on('click', '#edit', function(){
       let currentStudent = $(this).closest('.student').attr('id');
       $("#"+currentStudent+" .arrival").html(`
-            <button type="button" class="btn btn-warning" id="late">Arrived late</button>
-            <button class="btn btn-success" id="onTime">On Time</button>
+            <button type="button" class="btn btn-warning" id="late">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              late</button>
+            <button class="btn btn-success" id="onTime">
+              <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+              On Time</button>
         `);
     });
   });

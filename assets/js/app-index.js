@@ -23,6 +23,7 @@ $(document).ready(function(){
         $('#userName').html('<p>Please select a user</p>');
         $('.toProm').addClass("disabled"); 
         $('.toPresences').addClass("disabled"); 
+        $('.second-caret-down').addClass('hidden');
     } else{
     $('#userName').html('Hello <p> <span class="name">' + currentUserName + '</span></p>');
     }
@@ -35,7 +36,7 @@ currentPromName = getCookie('promName');
 $(document).ready(function(){
     if (currentPromName === ''){
         $('#promName').html('<p>Please select a prom</p>');
-        $('.toPresences').addClass("disabled");         
+        $('.toPresences').addClass("disabled");     
     }
     else {
         $('#promName').html('selected prom: <p> <span class="name"> ' + currentPromName + '</span></p>');

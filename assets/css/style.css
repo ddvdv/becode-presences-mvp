@@ -47,7 +47,12 @@ h1{
 	margin-left: 200px !important ;
 	margin-top: -95px !important ;
 }
-
+.caret-down{
+  display: block;
+  margin: auto;
+  text-align: center;
+  color: #15232e;
+}
 
 /*PARTIE CSS DAVID*/
   .student, .prom, .user, .choixMenu{
@@ -61,7 +66,7 @@ h1{
     align-items: center;
   }
   .choixMenu{
-    margin-top: 40px;
+    margin-top: 10px;
   }
   img{
     height: 90px;
@@ -98,7 +103,10 @@ h1{
   .arrival, .change{
     display: flex;
     justify-content: space-between;
-
+    align-items: stretch;
+  }
+  .arrival p {
+    vertical-align: bottom;
   }
   .choixMenu .glyphicon{
     font-size: 2.5em;
