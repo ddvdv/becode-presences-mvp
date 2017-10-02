@@ -145,6 +145,7 @@ $(document).ready(function(){
               <i class="fa fa-pencil" aria-hidden="true"> </i>
             edit</button>
             `);
+          document.body.style.zoom=1;
       });
      });
     $(".student").on('click', 'datetimepicker3', function(){
@@ -163,8 +164,5 @@ $(document).ready(function(){
               <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
               On Time</button>
         `);
-          // restore normal zoom after timeEdit focus
-          document.body.style.zoom=0.5;
-
     });
   });
