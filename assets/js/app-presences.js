@@ -130,6 +130,7 @@ $(document).ready(function(){
       </div>
         `);
         // simulation click sur le snippet
+        $('#timeEdit').trigger('focus');
         $('#timeEdit').trigger('click');
        // et d'un bouton pour valider l'entrée
        $(".arrival").on('click', '#enterTime', function(){
@@ -144,8 +145,6 @@ $(document).ready(function(){
               <i class="fa fa-pencil" aria-hidden="true"> </i>
             edit</button>
             `);
-          // restore normal zoom after timeEdit focus
-          document.body.style.zoom=1.0;
       });
      });
     $(".student").on('click', 'datetimepicker3', function(){
@@ -164,5 +163,8 @@ $(document).ready(function(){
               <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
               On Time</button>
         `);
+          // restore normal zoom after timeEdit focus
+          document.body.style.zoom=1.0;
+
     });
   });
