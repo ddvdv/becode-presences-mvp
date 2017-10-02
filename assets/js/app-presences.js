@@ -164,7 +164,7 @@ $(document).ready(function(){
               On Time</button>
         `);
           // restore normal zoom after timeEdit focus
-          document.body.style.zoom=1.0;
+          document.body.style.zoom=0.5;
 
     });
   });
