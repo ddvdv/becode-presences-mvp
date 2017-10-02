@@ -1,0 +1,22 @@
+{
+  "name": "imin",
+  "version": "1.0.0",
+  "description": "Take presences of people",
+  "main": "index.js",
+  "scripts": {
+    "test": "takepres"
+  },
+  "keywords": [
+    "take",
+    "presences",
+    "app"
+  ],
+  "author": "Juan Cely Ramos",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^4.4.0",
+    "firebase-admin": "^5.2.1",
+    "ip": "^1.1.5",
+    "socket.io": "^2.0.3"
+  }
+}
