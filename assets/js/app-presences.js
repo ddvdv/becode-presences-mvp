@@ -124,7 +124,7 @@ $(document).ready(function(){
       $("#"+currentStudent+" .arrival").html(`
       <div class="timepicker"
         <div class='col-xs-12'> arrived at: 
-          <input id="timeEdit" type="time"/>
+          <input id="timeEdited" type="time"/>
         </div>
        <button class="btn btn-primary pull-right" id="enterTime">Enter</button>
       </div>
@@ -136,7 +136,7 @@ $(document).ready(function(){
        $(".arrival").on('click', '#enterTime', function(){
           let currentStudent = $(this).closest('.student').attr('id');
           // récupration de l'heure entrée
-          let timeOfArrival = $('#datetimepicker3 input').val();
+          let timeOfArrival = $('#timeEdited').val();
            // ajout de l'heure d'arrivée dans la DB
            //  -->CRUD
           $("#"+currentStudent+" .arrival").html(`
