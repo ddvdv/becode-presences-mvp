@@ -14,10 +14,18 @@ function getCookie(cname) {
     return "";
 }
 
+
 currentUserName = getCookie('userName');
 
+
 $(document).ready(function(){
+    if (currentUserName === ''){
+        $('#userName').html('<p>Please select a user</p>');
+        $('.toProm').addClass("disabled"); 
+        $('.toPresences').addClass("disabled"); 
+    } else{
     $('#userName').html('Hello <p> <span class="name">' + currentUserName + '</span></p>');
+    }
 });
 
 
@@ -25,6 +33,12 @@ $(document).ready(function(){
 currentPromName = getCookie('promName');
 
 $(document).ready(function(){
-    $('#promName').html('selected prom: <p> <span class="name"> ' + currentPromName + '</span></p>');
+    if (currentPromName === ''){
+        $('#promName').html('<p>Please select a prom</p>');
+        $('.toPresences').addClass("disabled");         
+    }
+    else {
+        $('#promName').html('selected prom: <p> <span class="name"> ' + currentPromName + '</span></p>');
+    }
 });
 
