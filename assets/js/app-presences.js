@@ -122,7 +122,8 @@ $(document).ready(function(){
         $('#datetimepicker3').datetimepicker({
           format: 'LT',
           format: 'HH:mm',
-          widgetPositioning: {vertical: 'top'}
+          widgetPositioning: {vertical: 'top'},
+          focusOnShow: false
         });
         // simulation click sur le snippet
         $('#datetimepicker3 span.input-group-addon').trigger('click');
