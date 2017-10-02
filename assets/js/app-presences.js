@@ -30,7 +30,7 @@ let studentsList = [ // mock data, récup liste de la DB
 {
   "id": 8,
   "fullName": "John MichMichMich"
-},
+}
 ];
 
 console.log(studentsList);
@@ -117,37 +117,26 @@ $(document).ready(function(){
         edit</button>
         `);
     });
+
     // Sous-button arrivée en retard, dirige vers snippet time
     $(".student").on('click', '#arrivedAt', function(){
       let currentStudent = $(this).closest('.student').attr('id');
       $("#"+currentStudent+" .arrival").html(`
       <div class="timepicker"
-        <div class='col-xs-12'>
-          <div class="form-group">
-            <div class='input-group date' id='datetimepicker3'>
-              <input type='text' class="form-control" />
-              <span class="input-group-addon">
-                <span class="glyphicon glyphicon-time"></span>
-              </span>
-            </div>
-          </div>
+        <div class='col-xs-12'> arrived at: 
+          <input id="timeEdited" type="time"/>
+        </div>
        <button class="btn btn-primary pull-right" id="enterTime">Enter</button>
       </div>
         `);
-        // et ajout du js snippet time
-        $('#datetimepicker3').datetimepicker({
-          format: 'LT',
-          format: 'HH:mm',
-          widgetPositioning: {vertical: 'top'},
-          focusOnShow: false
-        });
         // simulation click sur le snippet
-        $('#datetimepicker3 span.input-group-addon').trigger('click');
+        $('#timeEdit').trigger('focus');
+        $('#timeEdit').trigger('click');
        // et d'un bouton pour valider l'entrée
        $(".arrival").on('click', '#enterTime', function(){
           let currentStudent = $(this).closest('.student').attr('id');
           // récupration de l'heure entrée
-          let timeOfArrival = $('#datetimepicker3 input').val();
+          let timeOfArrival = $('#timeEdited').val();
            // ajout de l'heure d'arrivée dans la DB
            //  -->CRUD
           $("#"+currentStudent+" .arrival").html(`
@@ -174,5 +163,8 @@ $(document).ready(function(){
               <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
               On Time</button>
         `);
+          // restore normal zoom after timeEdit focus
+          document.body.style.zoom=0.5;
+
     });
   });
