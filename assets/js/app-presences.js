@@ -146,6 +146,10 @@ $(document).ready(function(){
             edit</button>
             `);
       });
+       // Simuler le click sur le bouton "enter" lors d'un blur du timeEdited
+       $('#timeEdited').on('blur', function(){
+        $('#enterTime').trigger('click');
+       })
      });
     $(".student").on('click', 'datetimepicker3', function(){
       $('#datetimepicker3').datetimepicker({
