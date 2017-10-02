@@ -130,8 +130,8 @@ $(document).ready(function(){
       </div>
         `);
         // simulation click sur le snippet
-        $('#timeEdit').trigger('focus');
-        $('#timeEdit').trigger('click');
+        $('#timeEdited').trigger('focus');
+        // $('#timeEdited').trigger('click');
        // et d'un bouton pour valider l'entrée
        $(".arrival").on('click', '#enterTime', function(){
           let currentStudent = $(this).closest('.student').attr('id');
