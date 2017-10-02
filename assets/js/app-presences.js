@@ -131,7 +131,7 @@ $(document).ready(function(){
         `);
         // simulation click sur le snippet
         $('#timeEdited').trigger('focus');
-        // $('#timeEdited').trigger('click');
+        $('#timeEdited').trigger('click');
        // et d'un bouton pour valider l'entrée
        $(".arrival").on('click', '#enterTime', function(){
           let currentStudent = $(this).closest('.student').attr('id');
