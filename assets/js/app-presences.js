@@ -30,7 +30,7 @@ let studentsList = [ // mock data, récup liste de la DB
 {
   "id": 8,
   "fullName": "John MichMichMich"
-},
+}
 ];
 
 console.log(studentsList);
@@ -117,20 +117,24 @@ $(document).ready(function(){
         edit</button>
         `);
     });
+
+ // <div class="form-group">
+ //            <div class='input-group date' id='datetimepicker3'>
+ //              <input type='text' class="form-control" />
+ //              <span class="input-group-addon">
+ //                <span class="glyphicon glyphicon-time"></span>
+ //              </span>
+ //            </div>
+
+
     // Sous-button arrivée en retard, dirige vers snippet time
     $(".student").on('click', '#arrivedAt', function(){
       let currentStudent = $(this).closest('.student').attr('id');
       $("#"+currentStudent+" .arrival").html(`
       <div class="timepicker"
         <div class='col-xs-12'>
-          <div class="form-group">
-            <div class='input-group date' id='datetimepicker3'>
-              <input type='text' class="form-control" />
-              <span class="input-group-addon">
-                <span class="glyphicon glyphicon-time"></span>
-              </span>
-            </div>
-          </div>
+          <input type="time"/>
+        </div>
        <button class="btn btn-primary pull-right" id="enterTime">Enter</button>
       </div>
         `);
