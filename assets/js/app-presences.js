@@ -145,7 +145,6 @@ $(document).ready(function(){
               <i class="fa fa-pencil" aria-hidden="true"> </i>
             edit</button>
             `);
-          document.body.style.zoom=1;
       });
      });
     $(".student").on('click', 'datetimepicker3', function(){
