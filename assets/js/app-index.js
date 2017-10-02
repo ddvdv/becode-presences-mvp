@@ -20,7 +20,7 @@ currentUserName = getCookie('userName');
 
 $(document).ready(function(){
     if (currentUserName === ''){
-        $('#userName').html('<p>Please select a user</p>');
+        $('#userName').html('<p>Select a user</p>');
         $('.toProm').addClass("disabled"); 
         $('.toPresences').addClass("disabled"); 
         $('.second-caret-down').addClass('hidden');
@@ -35,7 +35,7 @@ currentPromName = getCookie('promName');
 
 $(document).ready(function(){
     if (currentPromName === ''){
-        $('#promName').html('<p>Please select a prom</p>');
+        $('#promName').html('<p>Select a prom</p>');
         $('.toPresences').addClass("disabled");     
     }
     else {
