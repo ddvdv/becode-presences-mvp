@@ -25,6 +25,10 @@ let usersList = [ // mock data, récup liste de la DB
 }
 ];
 
+// socket.get('getPromsList' , (data)=>{
+//   promsList = data;
+// } );
+
 console.log(usersList);
 
 $(document).ready(function(){
@@ -48,21 +52,13 @@ $(document).ready(function(){
       selectedUserId = +selectedUserId;
       console.log(selectedUserId);
 
-      setCookie("userId", selectedUserId, 365);
+      window.localStorage.setItem('userId', selectedUserId)
 
       for(user of usersList){
         if (user.id === selectedUserId){
-          setCookie("userName", user.userName, 365);
+          window.localStorage.setItem("userName", user.userName);
         }
       }
       document.location.href="index.html"
     })
 });
-
-// Fonction générique d'enregistrement et récupération de cookies
-function setCookie(cname, cvalue, exdays) {
-    let d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}

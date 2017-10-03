@@ -33,6 +33,14 @@ let studentsList = [ // mock data, récup liste de la DB
 }
 ];
 
+studentsList = [];
+selectedProm = 1;
+
+// récup de la liste des étudiants
+socket.get('getStudentsList', selectedProm , (data)=>{
+  studentsList = data;
+} );
+
 console.log(studentsList);
 
 $(document).ready(function(){

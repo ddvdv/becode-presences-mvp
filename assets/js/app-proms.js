@@ -16,6 +16,11 @@ let promsList = [ // mock data, récup liste de la DB
 }
 ];
 
+// socket.get('getPromsList' , (data)=>{
+//   promsList = data;
+// } );
+
+
 $(document).ready(function(){
     // Génération de la liste de proms
     for(prom of promsList){
@@ -38,22 +43,14 @@ $(document).ready(function(){
       selectedPromId = +selectedPromId;
       console.log(selectedPromId);
 
-      setCookie("promId", selectedPromId, 365);
+      window.localStorage.setItem("promId", selectedPromId);
 
       for(prom of promsList){
         if (prom.id === selectedPromId){
-          setCookie("promName", prom.promName, 365);
+          window.localStorage.setItem("promName", prom.promName);
         }
       }
       document.location.href="index.html"
     })
 
 });
-
-// Fonction générique d'enregistrement et récupération de cookies
-function setCookie(cname, cvalue, exdays) {
-    let d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
