@@ -1,0 +1,57 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--global',
+1 verbose cli   'oghliner' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData oghliner
+8 silly fetchOtherPackageData oghliner
+9 silly cache add args [ 'oghliner', null ]
+10 verbose cache add spec oghliner
+11 silly cache add parsed spec Result {
+11 silly cache add   raw: 'oghliner',
+11 silly cache add   scope: null,
+11 silly cache add   name: null,
+11 silly cache add   rawSpec: 'oghliner',
+11 silly cache add   spec: '/home/user/GitHub/Becode/Safia/projets externes/becode-presences-mvp/oghliner',
+11 silly cache add   type: 'local' }
+12 silly addLocalTarball shasum (computed) da39a3ee5e6b4b0d3255bfef95601890afd80709
+13 verbose addTmpTarball /home/user/GitHub/Becode/Safia/projets externes/becode-presences-mvp/oghliner not in flight; adding
+14 verbose addTmpTarball validating metadata from /home/user/GitHub/Becode/Safia/projets externes/becode-presences-mvp/oghliner
+15 verbose tar unpack /home/user/GitHub/Becode/Safia/projets externes/becode-presences-mvp/oghliner
+16 verbose tar unpacking to /tmp/npm-16984-197d9ab4/unpack-a569a37e
+17 silly gentlyRm /tmp/npm-16984-197d9ab4/unpack-a569a37e is being purged
+18 verbose gentlyRm don't care about contents; nuking /tmp/npm-16984-197d9ab4/unpack-a569a37e
+19 silly gunzTarPerm modes [ '755', '644' ]
+20 error tar.unpack error reading /home/user/GitHub/Becode/Safia/projets externes/becode-presences-mvp/oghliner
+21 error addLocal Could not install /home/user/GitHub/Becode/Safia/projets externes/becode-presences-mvp/oghliner
+22 silly fetchPackageMetaData Error: 0-byte tarball
+22 silly fetchPackageMetaData Please run `npm cache clean`
+22 silly fetchPackageMetaData     at /usr/share/npm/lib/utils/tar.js:262:14
+22 silly fetchPackageMetaData     at FSReqWrap.oncomplete (fs.js:82:15)
+22 silly fetchPackageMetaData  error for oghliner [Error: 0-byte tarball
+22 silly fetchPackageMetaData Please run `npm cache clean`]
+23 silly rollbackFailedOptional Starting
+24 silly rollbackFailedOptional Finishing
+25 silly runTopLevelLifecycles Starting
+26 silly runTopLevelLifecycles Finishing
+27 silly install printInstalled
+28 verbose stack Error: 0-byte tarball
+28 verbose stack Please run `npm cache clean`
+28 verbose stack     at /usr/share/npm/lib/utils/tar.js:262:14
+28 verbose stack     at FSReqWrap.oncomplete (fs.js:82:15)
+29 verbose cwd /home/user/GitHub/Becode/Safia/projets externes/becode-presences-mvp
+30 error Linux 4.10.0-35-generic
+31 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "--global" "oghliner"
+32 error node v4.2.6
+33 error npm  v3.5.2
+34 error 0-byte tarball
+34 error Please run `npm cache clean`
+35 error If you need help, you may report this error at:
+35 error     <https://github.com/npm/npm/issues>
+36 verbose exit [ 1, true ]
